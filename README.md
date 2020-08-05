@@ -1,5 +1,5 @@
 # Engineering Little Tools
- Some programs that can do help to my projects
+ Some programs that can do help to my projects.
 
 ## Wavelength_IL_FWHM_Recording.m
 
@@ -9,7 +9,7 @@ This can analyze *transmission parameter* results from Lumerical FDTD，and save
 
 Make sure the FDTD output values are positive and save as *Text*. e.g. 
 
-![example](.\pictures\example.png)
+![example](pictures/example.png)
 
 ## Plot_Spectrum_with_IL_FWHM.m
 
