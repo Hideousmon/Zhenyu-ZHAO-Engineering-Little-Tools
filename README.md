@@ -3,7 +3,7 @@
 
 ## Wavelength_IL_FWHM_Recording.m
 
-This can analyze *transmission parameter* results from Lumerical FDTD，and save *resonance wavelength*, *insertion loss*, *FWHM* into a ".csv" file.
+It can analyze *transmission parameter* results from Lumerical FDTD，and save *resonance wavelength*, *insertion loss*, *FWHM* into a ".csv" file.
 
 #### Attention
 
@@ -21,6 +21,6 @@ Make sure the FDTD output values are positive and save as *Text*.
 
 ## EightCannel_Isolation_Cal.m
 
-It can help calculate 8 resonance results from Lumerical FDTD and calculate *Channel Isolation* between each two of them, and save *Channel Isolation* into a ".csv" file.
+It can help analyze 8 resonance results from Lumerical FDTD and calculate *Channel Isolation* between each two of them, and save *Channel Isolation* into a ".csv" file.
 
 Make sure the FDTD output values are positive and save as *Text*.
