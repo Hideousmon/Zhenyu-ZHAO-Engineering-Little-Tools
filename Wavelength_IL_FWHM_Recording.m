@@ -14,7 +14,7 @@ for i = 1:55
     wavelength = flipud(wavelength);
     intensity = flipud(intensity);
 
-    [pks,locs] = findpeaks(db(abs(intensity)),wavelength,'MinPeakProminence',4,'Annotate','extents'); % find peaks 
+    [pks,locs] = findpeaks(db(abs(intensity),'power'),wavelength,'MinPeakProminence',4,'Annotate','extents'); % find peaks 
     for item_locs = 1:length(locs)
         item = locs(item_locs);
        if (item > 1.547) & (item < 1.562)  % set your wavelength range
@@ -22,8 +22,8 @@ for i = 1:55
            wavelength_ouput = wavelength(location)*1000; %resonance wavelength
            IL_ouput = -pks(item_locs); % insertion loss
            w = 0;
-           while ~(db(abs(intensity(location-w))) < db(abs(intensity(location))) - 3 & ... % FWHW calcualte
-                   db(abs(intensity(location+w))) < db(abs(intensity(location))) - 3)
+           while ~(db(abs(intensity(location-w)),'power') < db(abs(intensity(location)),'power') - 3 & ... % FWHW calcualte
+                   db(abs(intensity(location+w)),'power') < db(abs(intensity(location)),'power') - 3)
                    w = w + 1;
            end
            FWHM_output = wavelength(location+w) - wavelength(location-w);

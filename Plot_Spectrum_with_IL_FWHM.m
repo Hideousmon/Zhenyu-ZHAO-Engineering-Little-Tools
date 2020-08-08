@@ -5,7 +5,7 @@ intensity = flipud(intensity);
 %% plot
 figure(1)
 hold on
-plot (wavelength, db(intensity));
+plot (wavelength, db(intensity,'power'));
 title(" Spectrum")
 set(gca,'FontSize', 16)
 set(gca,'FontName', 'Times New Roman')
@@ -14,14 +14,14 @@ set(gca,'FontName', 'Times New Roman')
 ylabel('Relative power (dB)'), xlabel('Wavelength (¦Ìm)')
 %% calculate results
 
-[pks,locs] = findpeaks(db(abs(intensity)),wavelength,'MinPeakProminence',4,'Annotate','extents');
+[pks,locs] = findpeaks(db(abs(intensity),'power'),wavelength,'MinPeakProminence',4,'Annotate','extents');
 locs % print all resonance wavelength
 locs = find(wavelength == locs(1)) % select the number of your wanted resonance wavelength
 wavelength(locs) % print your selected resonance wavelength
 pks(1) % print insertion loss (inverse value)
 
-while ~(db(abs(intensity(locs-w))) < db(abs(intensity(locs))) - 3 & ...
-     db(abs(intensity(locs+w))) < db(abs(intensity(locs))) - 3)
+while ~(db(abs(intensity(locs-w)),'power') < db(abs(intensity(locs)),'power') - 3 & ...
+     db(abs(intensity(locs+w)),'power') < db(abs(intensity(locs)),'power') - 3)
      w = w + 1;
 end
 FWHM = wavelength(locs-w) - wavelength(locs+w) % print FWHM

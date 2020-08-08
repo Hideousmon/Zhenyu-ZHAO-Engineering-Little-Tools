@@ -14,8 +14,8 @@ for i = 1:8
     intensity = intensity;
     wavelength = flipud(wavelength);
     intensity = flipud(intensity);
-    intensity_all(i,:) = db(abs(intensity));
-    [pks,locs] = findpeaks(db(abs(intensity)),wavelength,'MinPeakProminence',4,'Annotate','extents'); % find peaks 
+    intensity_all(i,:) = db(abs(intensity),'power');
+    [pks,locs] = findpeaks(db(abs(intensity),'power'),wavelength,'MinPeakProminence',4,'Annotate','extents'); % find peaks 
     for item_locs = 1:length(locs)
         item = locs(item_locs);
        if (item > 1.547) & (item < 1.562) % set your wavelength range
