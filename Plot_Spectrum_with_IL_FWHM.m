@@ -1,3 +1,4 @@
+clear all
 [wavelength dot intensity] = textread('1.txt',' %f %s %f','headerlines',3) ; % input files name  (from lumerical FDTD's txt)
 intensity = intensity;
 wavelength = flipud(wavelength);
@@ -19,7 +20,7 @@ locs % print all resonance wavelength
 locs = find(wavelength == locs(1)) % select the number of your wanted resonance wavelength
 wavelength(locs) % print your selected resonance wavelength
 pks(1) % print insertion loss (inverse value)
-
+w=0
 while ~(db(abs(intensity(locs-w)),'power') < db(abs(intensity(locs)),'power') - 3 & ...
      db(abs(intensity(locs+w)),'power') < db(abs(intensity(locs)),'power') - 3)
      w = w + 1;
