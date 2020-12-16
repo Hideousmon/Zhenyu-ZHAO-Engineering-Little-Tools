@@ -24,3 +24,16 @@ Make sure the FDTD output values are positive and save as *Text*.
 It can help analyze 8 resonance results from Lumerical FDTD and calculate *Channel Isolation* between each two of them, and save *Channel Isolation* into a ".csv" file.
 
 Make sure the FDTD output values are positive and save as *Text*.
+
+
+
+## Wavelength_IL_FWHM_Recording_Drop_Port.m
+
+Based on *Wavelength_IL_FWHM_Recording.m*, analyze FSR in Microring Drop port.
+
+
+
+## Wavelength_IL_FWHM_Recording_Through_Port.m
+
+Based on *Wavelength_IL_FWHM_Recording.m*, analyze FSR in Microring Through port.
+
