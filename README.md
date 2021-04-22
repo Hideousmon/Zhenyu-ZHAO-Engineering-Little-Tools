@@ -37,3 +37,9 @@ Based on *Wavelength_IL_FWHM_Recording.m*, analyze FSR in Microring Drop port.
 
 Based on *Wavelength_IL_FWHM_Recording.m*, analyze FSR in Microring Through port.
 
+
+
+## checkandshutdown.py
+
+Check cpu usage and shut off the machine (with Win10) when cpu usage is low.
+
