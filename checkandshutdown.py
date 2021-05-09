@@ -3,9 +3,8 @@ from tkinter import *
 import psutil
 import os
 
-
+### @ https://github.com/arcticfox1919/tkinter-tabview/blob/master/dragwindow.py
 class DragWindow(tk.Tk):
-    ### @ https://github.com/arcticfox1919/tkinter-tabview/blob/master/dragwindow.py
     root_x, root_y, abs_x, abs_y = 0, 0, 0, 0
     width, height = None, None
 
@@ -14,9 +13,9 @@ class DragWindow(tk.Tk):
         self["bg"] = bg
         self.width, self.height = width, height
         self.overrideredirect(True)
-        self.wm_attributes("-alpha", alpha)      
-        self.wm_attributes("-toolwindow", True)  
-        self.wm_attributes("-topmost", topmost)  
+        self.wm_attributes("-alpha", alpha)      # 透明度
+        self.wm_attributes("-toolwindow", True)  # 置为工具窗口
+        self.wm_attributes("-topmost", topmost)  # 永远处于顶层
         self.bind('<B1-Motion>', self._on_move)
         self.bind('<ButtonPress-1>', self._on_tap)
 
@@ -75,7 +74,7 @@ if __name__ == '__main__':
         message_cpu.set("CPU Use: {}%".format(cpu))
         message_mem.set("MEM Use: {}%".format(mem))
         if restored_cpu < 2:
-            os.system('shutdown -s -t 0')
+            os.system('start /b shutdown -s -t 0')
 
         root.after(1000, check_resources)
 
