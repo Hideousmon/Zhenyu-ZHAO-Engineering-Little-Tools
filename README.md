@@ -43,3 +43,14 @@ Based on *Wavelength_IL_FWHM_Recording.m*, analyze FSR in Microring Through port
 
 Check CPU usage and shutdown the machine (with Win10) when CPU usage is low.
 
+* If there is no remote connecting when the app needs to be run, it requests that the app runs on the system service:
+
+  ```
+  ## add the app to the system service
+  sc create cands  binpath= C:\Users\Administrator\Desktop\checkandshutdown.exe type= own start= auto displayname= cands
+  
+  ## run
+  net start cands
+  ```
+
+  
