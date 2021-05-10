@@ -47,7 +47,7 @@ Check CPU usage and shutdown the machine (with Win10) when CPU usage is low.
 
   ```
   ## add the app to the system service
-  sc create cands  binpath= C:\Users\Administrator\Desktop\checkandshutdown.exe type= own start= auto displayname= cands
+  sc create cands  binpath= C:\Users\Administrator\Desktop\checkandshutdown.exe type= own start= demand displayname= cands
   
   ## run
   net start cands
